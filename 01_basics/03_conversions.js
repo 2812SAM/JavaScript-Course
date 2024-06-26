@@ -24,3 +24,12 @@ let num3 = Number(s2);
 console.log(num3);
 
 // PRACTICAL APPLICATION ? --------------------> WHENEVER THE BROWSER GIVES US VALUES ,MOSTLY THOSE ARE STRING SO WE NEED TO CONVERT THEM TO OUR DESIRED DATATYPES TO PERFORM CERTAIN FUNCTIONS..
+
+
+//************************************ OPERATIONS *********************************************
+
+console.log(2**3)     // 2^3;
+console.log("swayam" + " Sharma")    //swayam sharma;
+console.log("1" + 2 + 2) // 122 (the moment it encounter string the after that every thinh is treated as string)
+console.log(1+2+"3"+4+5) // 3345
+console.log(+"");      // 0;
