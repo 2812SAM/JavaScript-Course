@@ -50,3 +50,20 @@ console.log(sumi(2,3))
 // You can't use curly parenthesis to return without using return word..use ()
 
 // to return an object ({kew:"hello"})
+
+//*******************************  IMPORTANT *************************//
+
+//**** IIFE immediately invocked function expressions
+
+// when you want to get function run immideatly afte its defination
+
+console.log((function naaam(name){
+    console.log(`my name is ${name}`);
+})("Swayam") ) // this is similar to naaam("Swayam")
+//Above is called NAMED IIFE
+
+console.log(((num1,num2)=>(num1+num2))(2,3));
+
+//General pattern ---------> ( () => {} )();
+// semi colon at the end is necessary . else it will give error...
+// all this is done to preve from global scope pollution on the function elements. so IIfr was used..
