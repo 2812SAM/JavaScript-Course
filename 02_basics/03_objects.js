@@ -1,4 +1,5 @@
 // Create objects.
+// you can directly create objects and can create classes aswell
 
 const myObj = {
     name: "swayam",
@@ -17,11 +18,24 @@ console.log(myObj['salary'])
 
 const mySymbol = Symbol("helloWorld");
 const myObj2 = {
+    name:"Somesh",
     [mySymbol] : "sym",
     age:5
 }
 
 console.log(myObj2)
 
+// you can make changes in you object also;
+myObj.name="Sharma"
+console.log(myObj.name);
+// if you want to freeze the changes on an object then use Object.freeze(ObjName)
 
+Object.freeze(myObj)
+
+// you can add functions also in the object;
+myObj2.greetings = function(){
+    console.log(`hello there my name is ${this.name}`)
+}
+console.log(myObj2.greetings());
+console.log(myObj2.greetings);// here only reference to function is returned
 
