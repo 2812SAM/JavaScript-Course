@@ -36,7 +36,7 @@ console.log(newDate3.getDay())                  // you can eextract any perticul
 
 //you can coustomis your date by using toLocalString func.
 
-console.log(newDate2.toLocaleString('default'{
+console.log(newDate2.toLocaleString('default',{
     weekday: "long",
     era: "long",
     dayPeriod :"long"
