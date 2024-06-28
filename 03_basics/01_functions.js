@@ -12,7 +12,7 @@ console.log(printName())
 function GiveDetails(anyObject){
     return `The name is ${anyObject.userName} and my salary is ${anyObject.Salary}`
 }
-const user ={
+const user = {
     userName : "Swayam",
     Salary: 690000
 }
@@ -24,3 +24,29 @@ function sum(...num){
     return 
 }
 sum(200,300,400)
+
+
+// YOU CAN define function like this also..
+
+const fun = function(){
+
+}
+
+
+//**** THIS function.....
+// 1) in objects we use (this.keyword) to excess keys of object..
+
+//you cant use this in function
+
+
+// ARROW FUNCTUION 
+// const sum = ()=>{}
+
+// ( ) contains parameters and { } contains function..... and when we use => that means no need to use return statement as well as no need of writing function
+
+const sumi = (num1,num2) => (num1+num2)
+console.log(sumi(2,3))
+
+// You can't use curly parenthesis to return without using return word..use ()
+
+// to return an object ({kew:"hello"})
