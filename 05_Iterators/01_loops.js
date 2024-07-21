@@ -98,3 +98,23 @@ for(const it in arr){
     console.log(`The Name of Employee is ${item.name} and his/her the starting package is ${item.Salary}`)
     console.log(item)
  })
+
+ // in forEach function. it do not return any value. so to get some  values out of array you can use (.filter) funct.
+
+salaryArray = arrObj.filter((items)=>{
+    return items.Salary>7000000;
+ })
+
+ console.log(salaryArray)
+
+ // Note if you use arrow funct then if you use {} after => then you have to explicitly return the items . and if you use one line code with () after => the items are returned implicitly.
+ 
+
+
+ // GUYS THERE IS A FUNCTION NAMED REDUCE which can add all the elements of the array..
+ // it takes an ACCUMULATOR AND A CURRVALUE
+ // accumulator is given by us .
+
+ FixedCost = arrObj.reduce((acc,curr_val)=> acc+curr_val.Salary,0
+ )
+ console.log(FixedCost)

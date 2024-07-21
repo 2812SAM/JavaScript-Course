@@ -13,7 +13,7 @@ console.log(d.flat(2)) //---------------------------> argument in flat func() in
 
 
 
-// You can youse various func of Array.func()... like asking it weather a given argument is an array or not? , to convert the given argument into array , to add a guven set of variables into array
+// You can use various func of Array.func()... like asking it weather a given argument is an array or not? , to convert the given argument into array , to add a given set of variables into array
 let e=2
 let f=3
 console.log(Array.isArray(a))

@@ -17,7 +17,7 @@ let hello =null
 let newhello = Number(hello);
 console.log(newhello);
 
-// what i fyou convert a string "123abc" to a number ------------> it will get vonvert into num but when we will print it , it will display NAN;
+// what if you convert a string "123abc" to a number ------------> it will get vonvert into num but when we will print it , it will display NAN;
 
 let s2 = " 1233b "
 let num3 = Number(s2);

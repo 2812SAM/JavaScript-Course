@@ -14,11 +14,11 @@ function GiveDetails(anyObject){
 }
 const user = {
     userName : "Swayam",
-    Salary: 690000
+    Salary: 6900000
 }
 console.log(GiveDetails(user))
 
-// consider an example of e-Commerece platform .If user keeps on entering item to cart add the total value of all items .. since the items is not constant so how will you make dynamic parameters in your addition func.? or can you  us rest operator ****REST OPERATOR combines the given values into an array. ***spread operator is used to spread two arrays into 3rd array.
+// consider an example of e-Commerece platform .If user keeps on entering item to cart add the total value of all items .. since the items is not constant so how will you make dynamic parameters in your addition func.? or can you  use rest operator ****REST OPERATOR combines the given values into an array. ***spread operator is used to spread two arrays into 3rd array.
 
 function sum(...num){
     return 
@@ -49,13 +49,13 @@ console.log(sumi(2,3))
 
 // You can't use curly parenthesis to return without using return word..use ()
 
-// to return an object ({kew:"hello"})
+// to return an object ({key:"hello"})
 
 //*******************************  IMPORTANT *************************//
 
 //**** IIFE immediately invocked function expressions
 
-// when you want to get function run immideatly afte its defination
+// when you want to get function run immideatly after its defination
 
 console.log((function naaam(name){
     console.log(`my name is ${name}`);

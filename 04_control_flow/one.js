@@ -13,7 +13,7 @@
 // truthy values---------> "0" , "false" , " " , {} , [] , function(){}
 
 //  false == 0  (true statement)
-// fale = ''     (true statement)
+// false = ''     (true statement)
 // 0 == ""      (true statement)
 
 
