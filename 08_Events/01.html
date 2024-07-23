@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+
+document.getElementById('owl').addEventListener('click',(e)=>{alert("Owl Clicked")},false);
+
+1st paramenter is event ,
+2nd is the task to be done on that event , 3rd (false)(default) is for event Propogation.
+
+if(thus ia false then 1st the event on the inner funtion will work the the external event will work.
+ suppose event is applied on a list item owl aswell as on its parent node. then in Condition of False The event propogationis fron inside to outside also known as Bubble Propogation other is called as Capturing event)
+
+ **** If you want to stop the Event propogation at all then Use e.stopPropogation() inside the function.
+
+ **** If you want to prevent the default function of event then use e.preventDefault();
+
+'e' in the function is the event object.
+// imp Types of events:-- browser events , environment events
+// * type , timestamp , preventDefault , target , toElement , srcElement , currentTarget , clientX , cilentY ,screeX , screenY ,altkey , ctrlKey ,shiftKey , keyCode.
+
+
+// Q click the image and it should get vanish..
+--> select all the images by DOM commands. then add  Click event and Manipulate DOM INSIDE EVENT FUNCTION
+
+select the class of unordered list to capture all the list imgs
+
+document.getElementById('image').addEventListener('click',function(e){
+    // e.target//-->gives the source of the clicked thing . If you click img. sorce will be just the image and not the bullet point. so ro remove the bullet point aswell we need its parent node i.e. li. 
+    // but if we click on bullet point inside ul then then its parent willget removed as per our logic but we dont want entire ul to get remived so use if statement in the event function.
+    let RemoveIt = e.target.parentNode
+    if(RemoveIt.tagName==='IMG'){// check the tag name of e.target.parentNode.
+    RemoveIt.remove()
+    }
+
+})
+
+
+</script>
+</html>
