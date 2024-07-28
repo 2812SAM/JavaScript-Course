@@ -6,17 +6,76 @@
     <title>Document</title>
 </head>
 <body>
-    Value	State	Description
+
+
+    <!-- Value	State	Description
 0	UNSENT	Client has been created. open() not called yet.
 1	OPENED	open() has been called.
 2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
 3	LOADING	Downloading; responseText holds partial data.
-4	DONE	The operation is complete.
+4	DONE	The operation is complete. -->
+<div class="card">
+    <img id="ava" src="" alt="" style="width:20%">
+    <div class="container">
+      <h4 id="name"><b></b></h4>
+      <p id="followers"></p>
+    </div>
+  </div>
+<button>Click to get Profile</button>
+
+
 </body>
 <script>
-    const reqURL = 'https://randomuser.me/api/';
-    const xhr=new XMLHttpRequest()
-    xhr.open('GET',reqURL)
+    document.addEventListener('DOMContentLoaded', function() {
+    const reqURL = 'https://api.github.com/users/hiteshchoudhary'; // this is the url of the API
+    const xhr=new XMLHttpRequest(); // Hold this api in  an object. so create one. 
+    xhr.open('GET',reqURL) // this command sends the req to get data from api;
+
+    // the states readyState keeps on changing from 0 to 4 as given in the body.when state 4  is achieved the we need to fetch the data. so  below is the method to do so.
+    // xhr.onreadystatechange is a function which monitors the state change . 
+
+
+   let data 
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState===4){
+            data = JSON.parse(this.responseText)
+            // now you have all the data of api in the data cariable.
+            console.log(data)
+            console.log(data.followers)
+            console.log(data.avatar_url)
+    
+        }
+    }
     xhr.send()
+
+    const button=document.querySelector('button');
+    function LoadProfile() {
+                if (data) {
+                    const avatar = data.avatar_url;
+                    const name = data.login;
+                    const follower = data.followers;
+                    const card = document.getElementById('ava');
+                    const cardName = document.getElementById('name');
+                    const cardFollower = document.getElementById('followers');
+
+                    if (card && cardName && cardFollower) { // Ensure elements exist
+                        card.src = avatar
+                        cardName.innerHTML = `<b>${name}</b>`;
+                        cardFollower.innerHTML=`<p>${follower} followers</p>`
+                    } else {
+                        console.error('Card or CardDetails element not found');
+                    }
+                } else {
+                    console.log('Data not loaded yet');
+                }
+                button.innerText='Reload!'
+            }
+
+    button.addEventListener('click',LoadProfile)
+
+
+    })
+
+    
 </script>
 </html>
